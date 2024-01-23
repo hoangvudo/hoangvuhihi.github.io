@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RESPONSIVE NAVBAR</title>
+    <script src="https://kit.fontawesome.com/69075f4195.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        ul {
+            list-style: none;
+            font-weight: bold;
+            font-style: italic;
+        }
+        nav {
+            background-color: rgb(240, 158, 230);
+        }
+        nav #main-menu li a{
+            color: white;
+            text-decoration: none;
+            padding: 8px 15px;
+            display: block;
+        }
+        #main-menu {
+            display: flex;
+        }
+        nav #main-menu li:hover a {
+            background-color: blue;
+            transition: all 0.3s;
+        }
+        #toggle {
+            display: none;
+            text-align: right;
+            color: #ccc;
+            background-color: black;
+            padding: 5px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        @media screen and (max-width :768px) {  
+            #main-menu {
+                flex-direction: column;
+                text-align: center;
+            }
+            #toggle {
+                display: block;
+            }
+            nav {
+                display: none;
+            }
+        }
+    </style>
+    <script>
+        $(document).ready(function() {
+            $('#toggle').click(function() {
+               $('nav').slideToggle();
+            });
+        })
+    </script>
+    <div id="warapper">
+        <div id="header">
+            <div id="toggle">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            <nav>
+                <ul id="main-menu">
+                    <li><a href="">TRANG CHỦ</a></li>
+                    <li><a href="">GIỚI THIỆU</a></li>
+                    <li><a href="">TÌM KIẾM</a></li>
+                    <li><a href="">LIÊN HỆ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</body>
+</html>
